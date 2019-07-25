@@ -4,11 +4,14 @@
 #
 Name     : mvn-logback-core
 Version  : 1.2.1
-Release  : 1
+Release  : 2
 URL      : https://repo1.maven.org/maven2/ch/qos/logback/logback-core/1.2.1/logback-core-1.2.1.jar
 Source0  : https://repo1.maven.org/maven2/ch/qos/logback/logback-core/1.2.1/logback-core-1.2.1.jar
-Source1  : https://repo1.maven.org/maven2/ch/qos/logback/logback-core/1.2.1/logback-core-1.2.1.pom
-Source2  : https://repo1.maven.org/maven2/ch/qos/logback/logback-parent/1.2.1/logback-parent-1.2.1.pom
+Source1  : https://repo1.maven.org/maven2/ch/qos/logback/logback-core/1.1.2/logback-core-1.1.2.jar
+Source2  : https://repo1.maven.org/maven2/ch/qos/logback/logback-core/1.1.2/logback-core-1.1.2.pom
+Source3  : https://repo1.maven.org/maven2/ch/qos/logback/logback-core/1.2.1/logback-core-1.2.1.pom
+Source4  : https://repo1.maven.org/maven2/ch/qos/logback/logback-parent/1.1.2/logback-parent-1.1.2.pom
+Source5  : https://repo1.maven.org/maven2/ch/qos/logback/logback-parent/1.2.1/logback-parent-1.2.1.pom
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : LGPL-2.1-only
@@ -31,13 +34,22 @@ data components for the mvn-logback-core package.
 
 %install
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/ch/qos/logback/logback-core/1.2.1
-cp %{SOURCE0} %{buildroot}/usr/share/java/.m2/repository/ch/qos/logback/logback-core/1.2.1
+cp %{SOURCE0} %{buildroot}/usr/share/java/.m2/repository/ch/qos/logback/logback-core/1.2.1/logback-core-1.2.1.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/ch/qos/logback/logback-core/1.1.2
+cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/ch/qos/logback/logback-core/1.1.2/logback-core-1.1.2.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/ch/qos/logback/logback-core/1.1.2
+cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/ch/qos/logback/logback-core/1.1.2/logback-core-1.1.2.pom
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/ch/qos/logback/logback-core/1.2.1
-cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/ch/qos/logback/logback-core/1.2.1
+cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/ch/qos/logback/logback-core/1.2.1/logback-core-1.2.1.pom
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/ch/qos/logback/logback-parent/1.1.2
+cp %{SOURCE4} %{buildroot}/usr/share/java/.m2/repository/ch/qos/logback/logback-parent/1.1.2/logback-parent-1.1.2.pom
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/ch/qos/logback/logback-parent/1.2.1
-cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/ch/qos/logback/logback-parent/1.2.1
+cp %{SOURCE5} %{buildroot}/usr/share/java/.m2/repository/ch/qos/logback/logback-parent/1.2.1/logback-parent-1.2.1.pom
 
 
 %files
@@ -45,6 +57,9 @@ cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/ch/qos/logback/logback-
 
 %files data
 %defattr(-,root,root,-)
+/usr/share/java/.m2/repository/ch/qos/logback/logback-core/1.1.2/logback-core-1.1.2.jar
+/usr/share/java/.m2/repository/ch/qos/logback/logback-core/1.1.2/logback-core-1.1.2.pom
 /usr/share/java/.m2/repository/ch/qos/logback/logback-core/1.2.1/logback-core-1.2.1.jar
 /usr/share/java/.m2/repository/ch/qos/logback/logback-core/1.2.1/logback-core-1.2.1.pom
+/usr/share/java/.m2/repository/ch/qos/logback/logback-parent/1.1.2/logback-parent-1.1.2.pom
 /usr/share/java/.m2/repository/ch/qos/logback/logback-parent/1.2.1/logback-parent-1.2.1.pom
